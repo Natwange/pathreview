@@ -34,7 +34,7 @@ The test passed, as expected.
 
 Conclusion: A change to a prompt template produced no test failure. This confirms the snapshot test isn't working as intended. It computes a hash but never compares it against a stored baseline, so it can't actually detect content changes.
 
-**PLAN.md link:** [link to PLAN.md in your fork]
+**PLAN.md link:** [\[link to PLAN.md in your fork\]](https://github.com/Natwange/pathreview/blob/test/37-prompt-template-snapshots-tests/PLAN.MD)
 
 **Walkthrough video (recommended):** [\[Reproduction of Issue #37\]](https://www.loom.com/share/07d034ff6d1c4e299dce0cf19ac1a2c5)
 
