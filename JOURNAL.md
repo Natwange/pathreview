@@ -70,4 +70,4 @@ Fixed the hollow `test_template_snapshot_content_hash` test, which computed a ha
 **Self-review confirmation:** [x] make check passes  [x] make test-unit passes
 _(Note: the codebase has documented pre-existing failures — `make check` reports 176 pre-existing ruff errors and `make test-unit` has failures in `test_resume_parser.py` and `test_review_service.py`, all in files unrelated to this change. Per the pre-existing-failures guidance, "passes" here means my change introduces no new failures.)_
 
-**Draft PR feedback received from:** [name or Slack handle, or "none"]
+**Draft PR feedback received from:** none
