@@ -58,8 +58,7 @@ The pre-commit hooks (ruff/black/mypy) block the commit because the whole file â
 
 ### Check-in 2 (end of week)
 
-**PR link:** [link to your submitted pull request]
-
+**PR link:** https://github.com/ascherj/pathreview/pull/825
 **Branch:** `test/37-prompt-template-snapshots-tests`
 
 **What you built:**
