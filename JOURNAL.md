@@ -71,3 +71,36 @@ Fixed the hollow `test_template_snapshot_content_hash` test, which computed a ha
 _(Note: the codebase has documented pre-existing failures — `make check` reports 176 pre-existing ruff errors and `make test-unit` has failures in `test_resume_parser.py` and `test_review_service.py`, all in files unrelated to this change. Per the pre-existing-failures guidance, "passes" here means my change introduces no new failures.)_
 
 **Draft PR feedback received from:** none
+
+## Week 10 — Iteration & reflection
+
+### Reviewer feedback
+
+**Feedback received:** [ ] Yes  [X] No — still awaiting review
+
+**Summary of feedback:**
+[What did reviewers comment on? Or note that no review came in.]
+N/A
+
+**How you responded:**
+[What changes did you make, or what did you reply? If no feedback,
+leave blank.]
+
+---
+
+### Reflection
+
+**What was harder than you expected?**
+The environment setup and Git workflow were much harder than the actual code fix. The fix itself was only a few lines, but getting to the point where I could commit it meant working through installing Docker on a shared office machine, `docker` and `make` not being found because they were on the PATH in Git Bash but not PowerShell, and even a bracketed-paste issue that turned a pasted command into gibberish. The single hardest moment was when my commit was blocked by the pre-commit hooks, which failed on the whole file over pre-existing lint and type errors that weren't mine.
+
+**What did you learn about working in a large codebase?**
+That you inherit the codebase as-is — including its existing failures — and your responsibility is not to make it worse, not to fix everything. In my own projects, a green test suite is a given; here, `make check` reported 176 pre-existing ruff errors and some unit tests were already failing before I touched anything. Learning to tell which failures were pre-existing versus mine, and to document that baseline clearly, was a new skill. I also came to appreciate the conventions (branch naming, commit format, PR template) that keep many contributors aligned on someone else's production code.
+
+**How did AI tools help — and where did they fall short?**
+AI was most useful for explaining unfamiliar concepts in plain terms (what a snapshot test and a hash actually are, the difference between Git remotes and branches), diagnosing environment problems (PATH issues, the paste bug), and helping me pinpoint the exact defect which was the two assertions that only checked the hash's type and length instead of comparing it to a baseline. It fell short on judgment calls that depended on my cohort's specific rules: whether to bypass the hooks, how to fill the self-review checkboxes honestly, and the "don't make it worse" policy. Those required reading the actual program instructions. The AI's first instinct was to fix the whole file, which wasn't what was expected.
+
+**What would you do differently if you started over?**
+I'd run `make check` and `make test-unit` to capture the pre-existing baseline *before* making any changes, so my before/after comparison would be clean rather than reconstructed after the fact. I'd also finish setting up the whole environment (Docker, and the right tools on PATH in the shell I actually use) before starting the issue, instead of fixing setup problems in the middle of the work.
+
+**What are you most proud of from this module?**
+That I understood the problem well enough to reproduce it and explain it in my own words before writing a single line of code and that the final fix was small and focused, with a clear failure message that tells the next developer exactly what to do, instead of a large or messy change.
